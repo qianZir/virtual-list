@@ -1,0 +1,20 @@
+.normal{
+  overflow-y: scroll;
+  height: 100%;
+}
+.item_img{
+  width:68px;
+  height:68px;
+  margin-right: 10px;
+}
+.item_box{
+  display: flex;
+  align-items:center;
+  height: 100px;
+  line-height: 100px;
+  margin:0 16px ;
+  border-bottom: 1px solid #eee;
+}
+.item_msg{
+  line-height: 30px;
+}
