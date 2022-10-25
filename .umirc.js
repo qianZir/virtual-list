@@ -1,6 +1,5 @@
-
 // ref: https://umijs.org/config/
-
+import { routes } from './routes/routes';
 export default {
   treeShaking: true,
   publicPath: `./`,
@@ -8,28 +7,20 @@ export default {
     htmlSuffix: true,
     dynamicRoot: true,
   },
-  routes: [
-    {
-      path: '/',
-      component: '../layouts/index',
-      routes: [
-        { path: '/', component: '../pages/index' },
-      ]
-    },
-  ],
+  routes: routes,
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
-    ['umi-plugin-react', {
-      antd: false,
-      dva: false,
-      dynamicImport: false,
-      dll: false,
-      routes: {
-        exclude: [
-          /components\//,
-        ],
+    [
+      'umi-plugin-react',
+      {
+        antd: false,
+        dva: false,
+        dynamicImport: false,
+        dll: false,
+        routes: {
+          exclude: [/components\//],
+        },
       },
-    }],
+    ],
   ],
-
-}
+};
