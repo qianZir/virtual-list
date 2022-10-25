@@ -3,13 +3,17 @@
 
 export default {
   treeShaking: true,
+  publicPath: `./`,
+  exportStatic: {
+    htmlSuffix: true,
+    dynamicRoot: true,
+  },
   routes: [
     {
       path: '/',
       component: '../layouts/index',
       routes: [
         { path: '/', component: '../pages/index' },
-        { path: '/demo', component: '../pages/demo' }
       ]
     },
   ],
@@ -19,9 +23,7 @@ export default {
       antd: false,
       dva: false,
       dynamicImport: false,
-      title: 'demo',
       dll: false,
-
       routes: {
         exclude: [
           /components\//,
